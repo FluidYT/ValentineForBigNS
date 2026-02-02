@@ -22,15 +22,223 @@
       <h2 id="resultTitle"></h2>
       <p id="resultText"></p>
 
-      <div class="basket" id="basket" hidden>
-        <h3>Your Valentine Basket 🧺💝</h3>
-        <div class="basket-items">
-          <div class="item"><span class="emoji">🥤</span><span>Redbull</span></div>
-          <div class="item"><span class="emoji">🍭</span><span>A few lollipops</span></div>
-          <div class="item"><span class="emoji">💐</span><span>Carnations flowers</span></div>
-          <div class="item"><span class="emoji">🍫</span><span>Chocolate</span></div>
-          <div class="item"><span class="emoji">🧸</span><span>Pink teddy bear</span></div>
+      <!-- DRAWN BASKET (SVG) -->
+      <div class="basketWrap" id="basket" hidden>
+        <h3 class="basketTitle">Your Valentine Basket 🧺💝</h3>
+
+        <div class="basketArt" role="img" aria-label="A cute gift basket with Red Bull, lollipops, carnations, chocolate, and a pink teddy bear.">
+          <svg viewBox="0 0 900 520" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <!-- background sparkle -->
+            <defs>
+              <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="rgba(0,0,0,0.18)"/>
+              </filter>
+
+              <linearGradient id="basketGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f2c38b"/>
+                <stop offset="1" stop-color="#d99b5d"/>
+              </linearGradient>
+
+              <linearGradient id="weaveGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f8d2a8"/>
+                <stop offset="1" stop-color="#c9864a"/>
+              </linearGradient>
+
+              <linearGradient id="pinkGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd1dc"/>
+                <stop offset="1" stop-color="#ff8fab"/>
+              </linearGradient>
+
+              <linearGradient id="rbGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#d8f2ff"/>
+                <stop offset="0.5" stop-color="#ffffff"/>
+                <stop offset="1" stop-color="#c9e9ff"/>
+              </linearGradient>
+
+              <linearGradient id="chocGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#6b3d2e"/>
+                <stop offset="1" stop-color="#3a1f18"/>
+              </linearGradient>
+            </defs>
+
+            <!-- floating hearts -->
+            <g opacity="0.28">
+              <path d="M120 90c20-30 60-20 60 10 0 35-60 70-60 70S60 135 60 100c0-30 40-40 60-10z" fill="#fff"/>
+              <path d="M790 80c15-22 45-15 45 8 0 26-45 52-45 52s-45-26-45-52c0-23 30-30 45-8z" fill="#fff"/>
+              <circle cx="730" cy="200" r="8" fill="#fff"/>
+              <circle cx="170" cy="220" r="7" fill="#fff"/>
+            </g>
+
+            <!-- basket shadow plate -->
+            <ellipse cx="450" cy="455" rx="320" ry="42" fill="rgba(0,0,0,0.12)"/>
+
+            <!-- ITEMS (back to front) -->
+            <!-- carnations -->
+            <g filter="url(#softShadow)">
+              <g transform="translate(120,110)">
+                <path d="M130 240c60-120 120-170 180-215" stroke="#2fbf71" stroke-width="10" stroke-linecap="round"/>
+                <path d="M180 270c40-110 90-160 140-210" stroke="#2fbf71" stroke-width="10" stroke-linecap="round"/>
+                <path d="M210 300c30-90 70-140 110-190" stroke="#2fbf71" stroke-width="10" stroke-linecap="round"/>
+
+                <!-- flowers -->
+                <g>
+                  <circle cx="305" cy="20" r="22" fill="#ff4d6d"/>
+                  <circle cx="330" cy="45" r="18" fill="#ff8fab"/>
+                  <circle cx="275" cy="45" r="18" fill="#ff8fab"/>
+                  <circle cx="305" cy="55" r="20" fill="#ff4d6d"/>
+                  <circle cx="305" cy="40" r="10" fill="#ffd6e0"/>
+                </g>
+
+                <g transform="translate(10,30)">
+                  <circle cx="305" cy="20" r="22" fill="#ff4d6d"/>
+                  <circle cx="330" cy="45" r="18" fill="#ff8fab"/>
+                  <circle cx="275" cy="45" r="18" fill="#ff8fab"/>
+                  <circle cx="305" cy="55" r="20" fill="#ff4d6d"/>
+                  <circle cx="305" cy="40" r="10" fill="#ffd6e0"/>
+                </g>
+
+                <g transform="translate(-18,55)">
+                  <circle cx="305" cy="20" r="22" fill="#ff4d6d"/>
+                  <circle cx="330" cy="45" r="18" fill="#ff8fab"/>
+                  <circle cx="275" cy="45" r="18" fill="#ff8fab"/>
+                  <circle cx="305" cy="55" r="20" fill="#ff4d6d"/>
+                  <circle cx="305" cy="40" r="10" fill="#ffd6e0"/>
+                </g>
+              </g>
+
+              <!-- lollipops -->
+              <g transform="translate(520,120)">
+                <path d="M70 250c-10 70-20 120-30 160" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+                <path d="M130 255c-2 70-6 120-10 160" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+                <path d="M190 245c10 70 22 120 35 160" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+
+                <g>
+                  <circle cx="70" cy="220" r="38" fill="#ffd6e0"/>
+                  <path d="M70 182a38 38 0 0 1 38 38h-18a20 20 0 0 0-20-20z" fill="#ff4d6d" opacity="0.9"/>
+                  <path d="M70 220a38 38 0 0 1-38-38h18a20 20 0 0 0 20 20z" fill="#ff8fab" opacity="0.9"/>
+                </g>
+
+                <g>
+                  <circle cx="130" cy="222" r="38" fill="#ffe08a"/>
+                  <path d="M130 184a38 38 0 0 1 38 38h-18a20 20 0 0 0-20-20z" fill="#ff6b6b" opacity="0.9"/>
+                  <path d="M130 222a38 38 0 0 1-38-38h18a20 20 0 0 0 20 20z" fill="#ff4d6d" opacity="0.9"/>
+                </g>
+
+                <g>
+                  <circle cx="190" cy="216" r="38" fill="#c7f9cc"/>
+                  <path d="M190 178a38 38 0 0 1 38 38h-18a20 20 0 0 0-20-20z" fill="#2dd4bf" opacity="0.9"/>
+                  <path d="M190 216a38 38 0 0 1-38-38h18a20 20 0 0 0 20 20z" fill="#4ea8de" opacity="0.9"/>
+                </g>
+              </g>
+
+              <!-- Red Bull can -->
+              <g transform="translate(360,115)">
+                <rect x="0" y="110" width="110" height="260" rx="26" fill="url(#rbGrad)" stroke="rgba(0,0,0,0.12)" stroke-width="3"/>
+                <rect x="10" y="140" width="90" height="210" rx="22" fill="rgba(78,168,222,0.18)"/>
+                <rect x="0" y="105" width="110" height="30" rx="15" fill="#e9f6ff" stroke="rgba(0,0,0,0.10)" stroke-width="3"/>
+                <rect x="0" y="360" width="110" height="28" rx="14" fill="#e9f6ff" stroke="rgba(0,0,0,0.10)" stroke-width="3"/>
+
+                <path d="M28 245h54" stroke="#ff4d6d" stroke-width="10" stroke-linecap="round"/>
+                <path d="M28 270h54" stroke="#4ea8de" stroke-width="10" stroke-linecap="round"/>
+
+                <text x="55" y="225" text-anchor="middle" font-size="18" font-weight="800" fill="#083a35">RED BULL</text>
+              </g>
+
+              <!-- chocolate -->
+              <g transform="translate(640,265)">
+                <rect x="0" y="0" width="190" height="120" rx="18" fill="url(#chocGrad)"/>
+                <rect x="10" y="10" width="170" height="100" rx="14" fill="rgba(255,255,255,0.08)"/>
+                <g opacity="0.35">
+                  <rect x="20" y="28" width="45" height="34" rx="8" fill="#ffffff"/>
+                  <rect x="72" y="28" width="45" height="34" rx="8" fill="#ffffff"/>
+                  <rect x="124" y="28" width="45" height="34" rx="8" fill="#ffffff"/>
+                  <rect x="20" y="68" width="45" height="34" rx="8" fill="#ffffff"/>
+                  <rect x="72" y="68" width="45" height="34" rx="8" fill="#ffffff"/>
+                  <rect x="124" y="68" width="45" height="34" rx="8" fill="#ffffff"/>
+                </g>
+                <text x="95" y="58" text-anchor="middle" font-size="18" font-weight="800" fill="#ffd6e0">CHOCOLATE</text>
+              </g>
+
+              <!-- teddy bear -->
+              <g transform="translate(170,260)">
+                <!-- ears -->
+                <circle cx="85" cy="40" r="30" fill="url(#pinkGrad)"/>
+                <circle cx="165" cy="40" r="30" fill="url(#pinkGrad)"/>
+                <circle cx="85" cy="40" r="16" fill="rgba(255,255,255,0.35)"/>
+                <circle cx="165" cy="40" r="16" fill="rgba(255,255,255,0.35)"/>
+
+                <!-- head -->
+                <circle cx="125" cy="90" r="70" fill="url(#pinkGrad)" stroke="rgba(0,0,0,0.10)" stroke-width="3"/>
+
+                <!-- face -->
+                <circle cx="100" cy="85" r="9" fill="#2b2b2b"/>
+                <circle cx="150" cy="85" r="9" fill="#2b2b2b"/>
+                <ellipse cx="125" cy="110" rx="26" ry="20" fill="rgba(255,255,255,0.42)"/>
+                <circle cx="125" cy="108" r="7" fill="#2b2b2b"/>
+                <path d="M117 121c7 10 20 10 27 0" stroke="#2b2b2b" stroke-width="4" stroke-linecap="round"/>
+
+                <!-- body -->
+                <ellipse cx="125" cy="210" rx="85" ry="75" fill="url(#pinkGrad)" stroke="rgba(0,0,0,0.10)" stroke-width="3"/>
+                <ellipse cx="125" cy="220" rx="48" ry="38" fill="rgba(255,255,255,0.38)"/>
+
+                <!-- arms -->
+                <ellipse cx="50" cy="210" rx="40" ry="32" fill="url(#pinkGrad)"/>
+                <ellipse cx="200" cy="210" rx="40" ry="32" fill="url(#pinkGrad)"/>
+
+                <!-- little heart -->
+                <path d="M125 235c10-16 30-10 30 6 0 18-30 36-30 36s-30-18-30-36c0-16 20-22 30-6z"
+                      fill="#ff4d6d" opacity="0.92"/>
+              </g>
+            </g>
+
+            <!-- BASKET -->
+            <g filter="url(#softShadow)">
+              <!-- handle -->
+              <path d="M235 355c35-150 395-150 430 0"
+                    fill="none" stroke="#c9864a" stroke-width="28" stroke-linecap="round"/>
+              <path d="M255 355c30-130 355-130 390 0"
+                    fill="none" stroke="#f8d2a8" stroke-width="14" stroke-linecap="round" opacity="0.85"/>
+
+              <!-- basket rim -->
+              <path d="M190 345h520c18 0 32 14 32 32v18H158v-18c0-18 14-32 32-32z"
+                    fill="url(#weaveGrad)" stroke="rgba(0,0,0,0.12)" stroke-width="3"/>
+
+              <!-- basket body -->
+              <path d="M158 395h584l-40 90c-14 22-40 35-66 35H264c-26 0-52-13-66-35z"
+                    fill="url(#basketGrad)" stroke="rgba(0,0,0,0.12)" stroke-width="3"/>
+
+              <!-- weave -->
+              <g opacity="0.35">
+                <path d="M210 405l60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M270 405l60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M330 405l60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M390 405l60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M450 405l60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M510 405l60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M570 405l60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M630 405l40 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+
+                <path d="M690 405l-60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M630 405l-60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M570 405l-60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M510 405l-60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M450 405l-60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M390 405l-60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M330 405l-60 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+                <path d="M270 405l-40 105" stroke="#8b5a2b" stroke-width="10" stroke-linecap="round"/>
+              </g>
+
+              <!-- little bow on basket -->
+              <g transform="translate(412,372)">
+                <path d="M38 22c-26-20-54-8-54 12 0 16 18 24 32 18 8-4 16-12 22-30z" fill="#ff4d6d"/>
+                <path d="M38 22c26-20 54-8 54 12 0 16-18 24-32 18-8-4-16-12-22-30z" fill="#ff8fab"/>
+                <circle cx="38" cy="28" r="10" fill="#ffd6e0"/>
+              </g>
+            </g>
+          </svg>
         </div>
+
+        <p class="basketCaption">Included: Red Bull, lollipops, carnations, chocolate, and a pink teddy 🧸💗</p>
       </div>
 
       <div class="actions">
