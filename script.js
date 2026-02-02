@@ -80,7 +80,7 @@ window.addEventListener("resize", resize);
 resize();
 
 function popConfetti(){
-  const n = 200;
+  const n = 220;
   for(let i=0;i<n;i++){
     pieces.push({
       x: Math.random()*canvas.width,
@@ -90,7 +90,7 @@ function popConfetti(){
       vy: 2 + Math.random()*6,
       a: Math.random()*Math.PI*2,
       va: -0.2 + Math.random()*0.4,
-      life: 120 + Math.random()*60
+      life: 120 + Math.random()*70
     });
   }
   if(!animating) animate();
@@ -113,7 +113,7 @@ function animate(){
     ctx.save();
     ctx.translate(p.x, p.y);
     ctx.rotate(p.a);
-    ctx.globalAlpha = Math.max(0, p.life/180);
+    ctx.globalAlpha = Math.max(0, p.life/190);
     ctx.fillRect(-p.r, -p.r, p.r*2, p.r*2);
     ctx.restore();
   }
