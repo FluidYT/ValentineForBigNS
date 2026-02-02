@@ -6,6 +6,7 @@ const resultText = document.getElementById("resultText");
 const copyBtn = document.getElementById("copyBtn");
 const confettiBtn = document.getElementById("confettiBtn");
 const subtitle = document.getElementById("subtitle");
+const basket = document.getElementById("basket");
 
 let noCount = 0;
 const noLines = [
@@ -18,27 +19,31 @@ const noLines = [
 
 function showResult(accepted){
   result.hidden = false;
+
   if(accepted){
-    resultTitle.textContent = "YAY!! 💞";
-    resultText.textContent = "Date locked in. I’m smiling like an idiot right now.";
-    subtitle.textContent = "Best decision you’ve made all year.";
+    resultTitle.textContent = "YAYYYYY!! 💖💘";
+    resultText.textContent = "I KNEW YOU’D SAY YES 😭💞 I’M SMILING LIKE AN IDIOT RIGHT NOW";
+    subtitle.textContent = "Best decision you’ve made all year. 😌";
+    basket.hidden = false;
     popConfetti();
   }else{
     resultTitle.textContent = "Ouch 😭";
     resultText.textContent = "I will recover… eventually… maybe…";
+    basket.hidden = true;
   }
 }
 
 yesBtn.addEventListener("click", () => showResult(true));
 
 noBtn.addEventListener("mouseenter", () => {
-  // playful dodge
   const pad = 14;
   const rect = noBtn.getBoundingClientRect();
   const maxX = window.innerWidth - rect.width - pad;
   const maxY = window.innerHeight - rect.height - pad;
+
   const x = Math.max(pad, Math.min(maxX, Math.random() * maxX));
   const y = Math.max(pad, Math.min(maxY, Math.random() * maxY));
+
   noBtn.style.position = "fixed";
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
@@ -66,6 +71,7 @@ confettiBtn.addEventListener("click", popConfetti);
 const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
 let pieces = [];
+
 function resize(){
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -74,7 +80,7 @@ window.addEventListener("resize", resize);
 resize();
 
 function popConfetti(){
-  const n = 180;
+  const n = 200;
   for(let i=0;i<n;i++){
     pieces.push({
       x: Math.random()*canvas.width,
@@ -94,7 +100,9 @@ let animating = false;
 function animate(){
   animating = true;
   ctx.clearRect(0,0,canvas.width,canvas.height);
+
   pieces = pieces.filter(p => p.life-- > 0);
+
   for(const p of pieces){
     p.x += p.vx;
     p.y += p.vy;
@@ -109,6 +117,7 @@ function animate(){
     ctx.fillRect(-p.r, -p.r, p.r*2, p.r*2);
     ctx.restore();
   }
+
   if(pieces.length){
     requestAnimationFrame(animate);
   }else{
